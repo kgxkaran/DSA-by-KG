@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int maxProduct(int arr[], int k, int n){
+    int ans = 0;
+    int product = 1;
+
+    // Pehli window ka product
+    for(int i = 0; i < k; i++){
+        product = product * arr[i];
+    }
+
+    ans = product;
+
+    // Window slide karo
+    for(int i = k; i < n; i++){
+        product = (product / arr[i-k]) * arr[i];
+        ans = max(ans, product);
+    }
+
+    return ans;
+}
+
+int main(){
+    int arr[] = {2, 3, 5, 4, 6, 8};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int k = 3;
+
+    cout << "Maximum product of subarray of size " << k << " is: " << maxProduct(arr, k, n) << endl;
+
+    return 0;
+}
