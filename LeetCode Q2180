@@ -1,0 +1,27 @@
+class Solution {
+public:
+    int countEven(int num) {
+        int ans = 0;
+        
+        int digit = 0;
+
+        for(int i = 1; i <= num; i++){
+
+            int copy = i;
+            int sum = 0;
+
+            while(copy > 0){
+                digit = copy % 10;
+                copy = copy/10;
+                sum = sum + digit ;
+            }
+
+            if(sum % 2 == 0) ans++;
+        
+        }
+
+        return ans;
+
+       
+    }
+};
