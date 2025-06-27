@@ -1,0 +1,18 @@
+pair<int,int>findPos(vector<vector<int>>&arr , int rows , int cols, int k){
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < cols; j++){
+            if(k == arr[i][j]){
+                return {i,j};
+            }
+        }
+    }
+    return {-1,-1};
+}
+
+cout << "Find element to be searched : " << endl;
+    cin >> k;
+    
+ auto result = findPos(arr,rows,cols,k);
+
+ cout << k << " number is at index : " << result.first << " and " << result.second << endl;
+     
