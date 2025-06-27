@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void print(vector<vector<int>>&arr ,int rows,int cols){
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < cols; j++){
+            cout << arr[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+int sum(vector<vector<int>>&arr ,int rows,int cols){
+    int ans = 0;
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < cols; j++){
+            ans = ans + arr[i][j];
+        }
+    }
+    return ans;
+}
+
+int main(){
+    int rows,cols;
+    cin >> rows >> cols;
+    vector<vector<int>>arr(rows , vector<int>(cols));
+    
+    for(int i = 0 ; i < rows; i++){
+        for(int j = 0; j < cols; j++){
+            arr[i][j] = i+j+1;
+        }
+    }
+    
+    print(arr , rows , cols);
+    cout << endl;
+    cout << "Sum is : " << sum(arr,rows,cols);
+}
