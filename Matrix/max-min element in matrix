@@ -1,0 +1,22 @@
+int maxElement(vector<vector<int>>&arr , int rows , int cols){
+    int maximum = arr[0][0];
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < cols; j++){
+            if(maximum < arr[i][j]){
+                maximum = arr[i][j];
+            }
+        }
+    }
+    return maximum;
+}
+int minElement(vector<vector<int>>&arr , int rows , int cols){
+    int minimum = arr[0][0];
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < cols; j++){
+            if(minimum > arr[i][j]){
+                minimum = arr[i][j];
+            }
+        }
+    }
+    return minimum;
+}
