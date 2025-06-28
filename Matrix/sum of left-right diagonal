@@ -12,3 +12,5 @@ int sumOfRight(vector<vector<int>>&arr,int rows,int cols){
     }
     return ans;
 }
+
+cout << "Sum of both diagonals are : " << sumOfRight(arr,rows,cols) + sumOfLeft(arr,rows,cols) << endl;
