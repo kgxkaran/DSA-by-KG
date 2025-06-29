@@ -1,0 +1,23 @@
+vector<vector<int>>updateZero(vector<vector<int>>&arr,int rows,int cols){
+    vector<int>row(rows,0);
+    vector<int>col(cols,0);
+    vector<vector<int>>ans = arr;
+    
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < cols; j++){
+            if(arr[i][j] == 0){
+                row[i] = 1;
+                col[j] = 1;
+            }
+        }
+    }
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < cols; j++){
+            if(row[i] == 1 || col[i] == 1){
+                ans[i][j] = 0;
+            }
+        }
+    }
+    
+    return ans;
+}
