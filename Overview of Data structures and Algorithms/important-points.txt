@@ -1,0 +1,19 @@
+📌 DSA + Interview Smart Practice Tips
+Question solve karte waqt ye soch:
+
+=> Iska brute force kya hoga?
+=> or konsi Better approach hoskati hai?
+=> Optimized ka time/space kya hoga?
+
+" Explain your logic line by line "
+
+*imagine you are giving an interview whenever solving any question
+*discuss and communicate the solution(brute,better,optimized) with yourself/or your friend or can also discuss with gpt
+*Also recognize the Patterns (We will be solving patterwise questions as well)
+*you must know how to calculate the Time-Space complexity of your code
+*Always follow Brute->Better->Optimal soltuions 
+
+Saath me har problem ke baad
+"Iska Time/Space kya hai?"
+
+
