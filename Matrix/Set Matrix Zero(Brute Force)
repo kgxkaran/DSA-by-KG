@@ -1,0 +1,45 @@
+Idea :- find a zero and mark rest of the elements in that row and column as -1 (obv except another 0) and after traversing the whole 2d array traverse again and update the all -1s to 0 
+
+->only applicable when your matrix has elements are positive ans 0, it can cause issues to -1
+
+Time Comp :- O(n^3)
+Space comp :- O(1) but not at all efficient
+
+void markRow(vector<vector<int>>& arr, int i, int cols){
+    for(int j = 0; j < cols; j++){
+        if(arr[i][j] != 0){
+            arr[i][j] = -1;
+        }
+    }
+}
+
+void markCol(vector<vector<int>>& arr, int j, int rows){
+    for(int i = 0; i < rows; i++){
+        if(arr[i][j] != 0){
+            arr[i][j] = -1;
+        }
+    }
+}
+
+void findZero(vector<vector<int>>& arr, int rows, int cols){
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < cols; j++){
+            if(arr[i][j] == 0){
+                markRow(arr, i, cols);
+                markCol(arr, j, rows);
+            }
+        }
+    }
+}
+
+void setZero(vector<vector<int>>& arr, int rows, int cols){
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < cols; j++){
+            if(arr[i][j] == -1){
+                arr[i][j] = 0;
+            }
+        }
+    }
+}
+
+
