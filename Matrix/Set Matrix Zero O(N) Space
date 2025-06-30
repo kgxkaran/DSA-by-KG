@@ -1,23 +1,26 @@
 vector<vector<int>>updateZero(vector<vector<int>>&arr,int rows,int cols){
-    vector<int>row(rows,0);
-    vector<int>col(cols,0);
-    vector<vector<int>>ans = arr;
+    vector<int>markrow(rows,0);    //create a rows sized array to track ki 1 zero present ho uss row mai and mark it as 1
+    vector<int>markcol(cols,0);    //same goes for the column
+    
     
     for(int i = 0; i < rows; i++){
         for(int j = 0; j < cols; j++){
             if(arr[i][j] == 0){
-                row[i] = 1;
-                col[j] = 1;
+                markrow[i] = 1;     //jese hii 0 mila traversal ke time markrow = 1 and markcol = 1
+                markcol[j] = 1;
             }
         }
     }
     for(int i = 0; i < rows; i++){
         for(int j = 0; j < cols; j++){
-            if(row[i] == 1 || col[i] == 1){
-                ans[i][j] = 0;
+            if(markrow[i] == 1 || markcol[j] == 1){
+                arr[i][j] = 0;
             }
         }
     }
     
-    return ans;
+    return arr;    //returning type here is a vector
 }
+
+Time comp :- O(2*n*m)
+Space comp :- O(n) + O(m)
