@@ -17,7 +17,7 @@ int main(){
 Time Complexity = O(logn) //coz iterations kam horhi hh
 Space Complexity = O(1)
 
-SHORTCUT :- 
+SHORTCUT + Better Time complexity :- 
 
 
 #include<bits/stdc++.h>
@@ -30,3 +30,5 @@ int count(long long  n){
 int main(){
     cout << count(6543386756353);
 }
+
+Time Complexity = O(1)
