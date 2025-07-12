@@ -1,0 +1,78 @@
+Stack :- a linear data structure whcih follows the LIFO principle
+
+Operations on STACK  :-
+
+push(X)   :- Push an element in stack
+pop(X)    :- deletes the element 
+peek()/top()    :- return the top element
+isEmpty() :- returns true if stack is empty otherwise false;
+size()    :- tells the size of stack
+
+
+📌 Stack Memory Concept (C++ mein)
+C++ mein function call stack bhi hota hai —
+Har function call hone par ek naya stack frame banta hai,
+aur jab function khatam hota hai toh uska frame pop ho jaata hai.
+
+Isi wajah se recursion ka base case na dena stack overflow error de sakta hai.
+
+📌 OOPS Golden Rule:
+“Data should not be accessible directly. It should be accessed and modified through well-defined interfaces (functions).”
+
+1) STACK implementation using Arrays (OOPS)
+
+#include<bits/stdc++.h>
+using namespace std;
+
+class Stack{
+private:    
+    int arr[100];
+    int top;
+    
+public:
+    Stack(){
+        top = -1;
+    };
+    void push(int x){
+        if(top >= 99){
+            cout << "Stack Overflow\n";
+            return;
+        }
+        arr[++top] = x;
+    }
+    void pop(){
+        if(top < 0){
+            cout << "Stack underflow\n";
+            return;
+        }
+        top--;
+    }
+    int peek(){
+        if(top < 0){
+            cout << "Stack underflow\n";
+            return -1;
+        }
+        return arr[top];
+    }
+    bool isEmpty(){
+        return top == -1;
+    }
+
+};
+
+int main(){
+    Stack s;
+    s.push(10);
+    s.push(20);
+    s.push(30);
+
+    cout << "Top element: " << s.peek() << endl;
+    s.pop();
+    cout << "Top after pop: " << s.peek() << endl;
+
+    if(s.isEmpty()){
+        cout << "Stack is empty\n";
+    } else {
+        cout << "Stack is not empty\n";
+    }
+}
